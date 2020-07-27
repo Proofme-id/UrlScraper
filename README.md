@@ -1,17 +1,6 @@
-# Didux.io Notification Agent
+# Proofme.ID URL Scraper
 
 To run this application you need to have npm installed.
-
-# Creating RS256 keypair for the JWT
-
-Create a 'jwt-keys' folder in the root directory of this project.
-```mkdir jwt-keys```
-
-Execute command for RS256 keypair generation. <br/>
-```ssh-keygen -t rsa -b 4096 -m PEM -f ./jwt-keys/private.key```
-
-(Don't add passphrase) <br/>
-```openssl rsa -in ./jwt-keys/private.key -pubout -outform PEM -out ./jwt-keys/public.pem```
 
 # Running the application
 

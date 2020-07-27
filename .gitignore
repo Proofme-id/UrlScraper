@@ -1,0 +1,5 @@
+node_modules
+build
+jwt-keys/*
+.idea
+.DS_Store

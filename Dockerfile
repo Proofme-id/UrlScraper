@@ -1,19 +1,22 @@
-FROM node:8
-
-# Create app directory
+# Build Stage 1
+# This build created a staging docker image
+#
+FROM node:16 AS builder
 WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-# Bundle app source
-COPY . .
-
+COPY tsconfig.json ./
+COPY package.json ./
 RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
+COPY ./src ./src
+RUN npm run build
 
-EXPOSE 4006
-CMD [ "npm", "start" ]
+# Build Stage 2
+# This build takes the production build from staging build
+#
+FROM node:16-alpine
+WORKDIR /usr/src/app
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --only=prod
+COPY --from=builder /usr/src/app/build ./build
+EXPOSE 80
+CMD npm start

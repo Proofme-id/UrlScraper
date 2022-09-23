@@ -1,7 +1,3 @@
 node_modules
 **/node_modules
-npm-debug.log
-nedb-data
 .gitignore
-smart-contracts/credentials.sol
-interfaces

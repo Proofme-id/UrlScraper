@@ -2,7 +2,7 @@
 	"name": "proofme-id-scraper-backend",
 	"version": "1.0.0",
 	"description": "Scrapes a URL because of CORS",
-	"main": "./build/src/main/index.js",
+	"main": "./build/main/index.js",
 	"scripts": {
 		"start": "nodemon ./build/main/index.js",
 		"build": "tsc",

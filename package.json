@@ -6,7 +6,8 @@
 	"scripts": {
 		"start": "nodemon ./build/main/index.js",
 		"build": "tsc",
-		"watch": "tsc -w"
+		"watch": "tsc -w",
+		"sonar": "sonar-scanner"
 	},
 	"author": "",
 	"license": "ISC",
@@ -38,6 +39,7 @@
 		"typescript": "^3.3.3"
 	},
 	"devDependencies": {
-		"@types/superagent": "4.1.1"
+		"@types/superagent": "4.1.1",
+		"sonar-scanner": "3.1.0"
 	}
 }
